@@ -52,4 +52,17 @@ $app->singleton(
 |
 */
 
+/**
+ * Custom helper for Binocular events, it saves events before queueing them
+ *
+ * @param $event
+ */
+function binocular_event(\Binocular\Events\Event $event)
+{
+    $repository = \App\EventSourcing\Repositories\Factory::create($event);
+    $repository->store($event);
+
+    event($event);
+}
+
 return $app;
