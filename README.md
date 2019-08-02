@@ -1,4 +1,2 @@
 # binocular-laravel
-Laravel implementation of binocular
-
-# WIP
+Example Laravel app using [Binocular](https://github.com/thiagomarini/binocular).
